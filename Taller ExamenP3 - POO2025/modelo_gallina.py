@@ -1,6 +1,11 @@
 
-class gallina : 
-    def __init__(self, codigo, edad, color):
+class Gallina : 
+    def __init__(self, codigo):
         self.codigo = codigo
-        self.edad = edad
-        self.color = color
+        self.produccion = []
+        
+    def agregar_huevos(self, cantidad):
+        self.produccion.append(cantidad)
+
+    def produccion_total(self):
+        return sum(self.produccion)
