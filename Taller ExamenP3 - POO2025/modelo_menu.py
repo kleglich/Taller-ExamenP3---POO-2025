@@ -97,5 +97,5 @@ class Menu:
         if eliminar:
             print("Registro eliminado.")
         else:
-
             print("No se encontro una gallina con ese código o no existe.")
+
