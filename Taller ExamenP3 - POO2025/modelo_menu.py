@@ -1,8 +1,4 @@
 
-# ==============================================
-# ARCHIVO: modelo_menu.py
-# ==============================================
-
 import random
 from modelo_gallina import Gallina
 from modelo_base_de_datos import BaseDatos
@@ -101,4 +97,5 @@ class Menu:
         if eliminar:
             print("Registro eliminado.")
         else:
+
             print("No se encontro una gallina con ese código o no existe.")
