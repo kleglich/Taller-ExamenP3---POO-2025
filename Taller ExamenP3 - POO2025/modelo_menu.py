@@ -6,6 +6,7 @@ from modelo_base_de_datos import BaseDatos
 class Menu:
     def __init__(self):
         self.bd = BaseDatos()
+        self.gl = Gallina
 
     def iniciar(self):
         while True:
@@ -17,6 +18,7 @@ class Menu:
             print("5. Consultar producción total de una gallina")
             print("6. Eliminar una gallina")
             print("7. Salir")
+            print("8. Ver producción semanal de una gallina")
             opcion = input("Seleccione una opción: ")
 
             match opcion:
@@ -35,6 +37,8 @@ class Menu:
                 case "7":
                     print("Programa finalizado.")
                     break
+                case "8":
+                    self.imprimirProduccion()
                 case _:
                     print("Opción inválida, intente de nuevo.")
 
@@ -98,4 +102,14 @@ class Menu:
             print("Registro eliminado.")
         else:
             print("No se encontro una gallina con ese código o no existe.")
+
+  def imprimirProduccion(self):
+        codigo = input("Código de la gallina: ")
+        gallina = self.bd.buscar_gallina(codigo)
+        if gallina:
+            print(f"Producción semanal de la gallina {codigo}:")
+            gallina.imprimir_produccion()
+        else:
+            print("No se encontro una gallina con ese código o no existe.")
+
 
