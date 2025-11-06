@@ -9,3 +9,8 @@ class Gallina :
 
     def produccion_total(self):
         return sum(self.produccion)
+
+    def imprimir_produccion(self):
+        for p in self.produccion:
+            print(p)
+
